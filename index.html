@@ -84,7 +84,7 @@
             z-index: 10; /* Ensure content is above the background */
         }
 
-        .content.active, .message.active {
+        .active {
             display: flex; /* Show active section */
         }
 
@@ -177,13 +177,13 @@
         }
 
         function showMessage() {
-            document.getElementById('content1').classList.remove('active');
-            document.getElementById('content2').classList.add('active');
+            document.getElementById('content1').classList.remove('active'); // Hide content1
+            document.getElementById('content2').classList.add('active'); // Show content2
         }
 
         function showContent() {
-            document.getElementById('content2').classList.remove('active');
-            document.getElementById('content1').classList.add('active');
+            document.getElementById('content2').classList.remove('active'); // Hide content2
+            document.getElementById('content1').classList.add('active'); // Show content1
         }
 
         // Update the clock every second

@@ -8,31 +8,34 @@
         @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
         
         body {
-            background-color: black;
-            color: #00ff00;
+            background-color: #0b0b0b; /* Darker black for a more immersive feel */
+            color: white; /* White text color */
             font-family: 'VT323', monospace; /* Digital, hacker-style font */
             text-align: center;
             margin: 0;
-            height: 100vh;
+            padding: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            font-size: calc(1vw + 1vh + 10px);
+            height: 100vh;
             overflow: hidden;
         }
 
         a {
-            color: #00ffff;
+            color: #00ffff; /* Cyan links */
             text-decoration: none;
+            transition: text-shadow 0.3s;
         }
 
         a:hover {
-            text-shadow: 0 0 5px #00ffff;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
         }
 
         p {
             text-transform: uppercase;
             letter-spacing: 2px;
+            margin: 10px 0; /* Spacing between paragraphs */
         }
 
         /* Glitch effect */
@@ -54,14 +57,24 @@
 
         /* Image styles */
         .header-icon {
-            width: 150px;
+            width: 30vw; /* Responsive width based on viewport width */
+            max-width: 150px; /* Maximum size */
             height: auto;
             margin-bottom: 20px;
+        }
+
+        /* Overall container */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
         }
     </style>
 </head>
 <body>
-    <div>
+    <div class="content">
         <!-- Header image -->
         <img src="skull-icon.jpg" alt="Skull Icon" class="header-icon">
 
@@ -76,4 +89,3 @@
     </div>
 </body>
 </html>
-

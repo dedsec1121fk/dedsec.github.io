@@ -8,7 +8,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
 
         body {
-            background-color: #0b0b0b; /* Dark background */
+            background-color: #000000; /* Darkest background */
             color: white; /* White text color */
             font-family: 'Ubuntu Mono', monospace; /* Terminal font */
             text-align: center;
@@ -39,14 +39,14 @@
         /* Clock styles */
         .clock {
             font-size: 5vw; /* Responsive font size for clock */
-            color: green; /* Green color for the clock */
+            color: red; /* Red color for the clock, same as title */
             margin-bottom: 20px; /* Spacing below clock */
         }
 
         /* Button Styles */
         .button {
-            background-color: #00ffff; /* Cyan button background */
-            color: black; /* Black text on button */
+            background-color: purple; /* Purple button background */
+            color: white; /* White text on button */
             border: none;
             padding: 10px 20px;
             text-align: center;
@@ -60,7 +60,7 @@
         }
 
         .button:hover {
-            background-color: #00cccc; /* Darken on hover */
+            background-color: #7d00ff; /* Lighter purple on hover */
             transform: scale(1.05); /* Slight scale up on hover */
         }
 
@@ -107,10 +107,12 @@
         <img src="skull-icon.jpg" alt="Skull Icon" class="header-icon" id="skullIcon" onclick="triggerColorChange()">
         <div class="clock" id="liveClock"></div>
 
-        <!-- Button for GitHub Username -->
+        <!-- GitHub Username Button -->
+        <p>GitHub Username:</p>
         <button class="button" onclick="window.open('https://github.com/dedsec1121fk', '_blank')">dedsec1121fk</button>
 
-        <!-- Button for Dumb-Boy Project -->
+        <!-- Dumb-Boy Project Button -->
+        <p>Check The Dumb-Boy Project:</p>
         <button class="button" onclick="window.open('https://github.com/dedsec1121fk/Dumb-Boy', '_blank')">Dumb-Boy</button>
 
         <p style="font-size: 3.5vw;">(Capture images remotely using device cameras for phishing purposes while logging user data, manage files through a browser interface for easy uploading, downloading, and searching, collect personal information through secure web forms for phishing attacks, personalize the terminal experience with custom prompts and visual enhancements, automate the setup of a coding environment for hacking tasks with essential packages and plugins, gather public data for OSINT tasks such as email validation and social media profile retrieval for investigative hacking, and securely manage user logins with hashed credentials for secure authentication.)</p>
@@ -154,7 +156,7 @@
         }
 
         function triggerColorChange() {
-            const colors = ["#0b0b0b", "#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
+            const colors = ["#000000", "#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
             let i = 0;
 
             const interval = setInterval(() => {
@@ -165,7 +167,7 @@
 
             setTimeout(() => {
                 clearInterval(interval); // Stop color change after 40 seconds
-                document.body.style.backgroundColor = '#0b0b0b'; // Reset to original color
+                document.body.style.backgroundColor = '#000000'; // Reset to original color
             }, 40000); // Stop after 40 seconds
         }
 

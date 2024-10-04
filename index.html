@@ -229,13 +229,13 @@
         }
 
         function showMessage() {
-            document.getElementById('content1').classList.remove('active'); // Hide content1
-            document.getElementById('content2').classList.add('active'); // Show content2
+            document.getElementById('content1').style.display = 'none'; // Hide content1
+            document.getElementById('content2').style.display = 'flex'; // Show content2
         }
 
         function showContent() {
-            document.getElementById('content2').classList.remove('active'); // Hide content2
-            document.getElementById('content1').classList.add('active'); // Show content1
+            document.getElementById('content2').style.display = 'none'; // Hide content2
+            document.getElementById('content1').style.display = 'flex'; // Show content1
         }
 
         // Update the clock every second

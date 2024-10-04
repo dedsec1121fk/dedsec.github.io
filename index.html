@@ -16,12 +16,10 @@
             padding: 0;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
-            overflow: hidden; /* Prevent scrolling */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
+            overflow-y: auto; /* Allow vertical scrolling */
             transition: background-color 0.5s; /* Smooth transition for color change */
-            padding: 2vw; /* Padding to keep content within screen borders */
         }
 
         h1 {
@@ -232,5 +230,4 @@
         updateClock();
     </script>
 </body>
-    </html>
-    
+</html>

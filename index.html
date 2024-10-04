@@ -23,16 +23,6 @@
             transition: background-color 0.5s; /* Smooth transition for color change */
         }
 
-        a {
-            color: #00ffff; /* Cyan links */
-            text-decoration: none;
-            transition: text-shadow 0.3s;
-        }
-
-        a:hover {
-            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
-        }
-
         h1 {
             color: red; /* Red color for the title */
             margin: 20px 0; /* Spacing above and below the title */
@@ -117,8 +107,11 @@
         <img src="skull-icon.jpg" alt="Skull Icon" class="header-icon" id="skullIcon" onclick="triggerColorChange()">
         <div class="clock" id="liveClock"></div>
 
-        <p>GitHub Username: <a href="https://github.com/dedsec1121fk" target="_blank" rel="noopener noreferrer">dedsec1121fk</a></p>
-        <p>Check The Dumb-Boy Project: <a href="https://github.com/dedsec1121fk/Dumb-Boy" target="_blank" rel="noopener noreferrer">Dumb-Boy</a></p>
+        <!-- Button for GitHub Username -->
+        <button class="button" onclick="window.open('https://github.com/dedsec1121fk', '_blank')">dedsec1121fk</button>
+
+        <!-- Button for Dumb-Boy Project -->
+        <button class="button" onclick="window.open('https://github.com/dedsec1121fk/Dumb-Boy', '_blank')">Dumb-Boy</button>
 
         <p style="font-size: 3.5vw;">(Capture images remotely using device cameras for phishing purposes while logging user data, manage files through a browser interface for easy uploading, downloading, and searching, collect personal information through secure web forms for phishing attacks, personalize the terminal experience with custom prompts and visual enhancements, automate the setup of a coding environment for hacking tasks with essential packages and plugins, gather public data for OSINT tasks such as email validation and social media profile retrieval for investigative hacking, and securely manage user logins with hashed credentials for secure authentication.)</p>
 

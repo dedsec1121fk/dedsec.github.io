@@ -35,18 +35,19 @@
         h1 {
             color: red; /* Red color for the title */
             margin: 20px 0; /* Spacing above and below the title */
-            font-size: 3em; /* Larger font size for the title */
+            font-size: 3vw; /* Responsive font size for the title */
         }
 
         p {
             text-transform: uppercase;
             letter-spacing: 2px;
             margin: 10px 0; /* Spacing between paragraphs */
+            font-size: 4vw; /* Responsive font size for paragraphs */
         }
 
         /* Clock styles */
         .clock {
-            font-size: calc(1.5vw + 1.5vh + 20px); /* Responsive font size */
+            font-size: 5vw; /* Responsive font size */
             color: green; /* Green color for the clock */
             margin-bottom: 20px;
         }
@@ -66,6 +67,23 @@
             align-items: center;
             justify-content: center;
             height: 100%;
+        }
+
+        /* Message for PC users */
+        .pc-message {
+            display: none; /* Hidden by default */
+            font-size: 2em; /* Size for the PC message */
+            color: white; /* Color for the PC message */
+        }
+
+        @media screen and (min-width: 768px) {
+            .content {
+                display: none; /* Hide content on PC */
+            }
+
+            .pc-message {
+                display: block; /* Show PC message on larger screens */
+            }
         }
     </style>
 </head>
@@ -88,6 +106,11 @@
         <p>Check the Dumb-Boy Project By Tapping Here: <a href="https://github.com/dedsec1121fk/Dumb-Boy" target="_blank">Dumb-Boy</a></p>
         <p style="font-size: small;">(Dumb Boy is a suite of tools for enhancing the Termux experience, offering functionalities for developers, cybersecurity enthusiasts, and terminal users. It has a variety of tools and programs for any user.)</p>
         <p>Donate using USDT (Ethereum Network): <strong>0x491Eac72C5571296DD17d2D8450</strong></p>
+    </div>
+
+    <!-- Message for PC users -->
+    <div class="pc-message">
+        USE A PHONE IDIOT!
     </div>
 
     <script>

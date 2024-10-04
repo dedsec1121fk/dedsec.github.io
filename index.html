@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>dedsec1121fk</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
 
         body {
             background-color: #0b0b0b; /* Dark background */
             color: white; /* White text color */
-            font-family: 'Roboto', sans-serif; /* Readable font */
+            font-family: 'Ubuntu Mono', monospace; /* Terminal font */
             text-align: center;
             margin: 0;
             padding: 0;
@@ -70,10 +70,15 @@
 
         @keyframes glitch {
             0% { transform: translate(0); }
-            20% { transform: translate(-5px, 5px); }
-            40% { transform: translate(5px, -5px); }
-            60% { transform: translate(-5px, 5px); }
+            10% { transform: translate(-2px, 2px); }
+            20% { transform: translate(2px, -2px); }
+            30% { transform: translate(-3px, 3px); }
+            40% { transform: translate(3px, -3px); }
+            50% { transform: translate(-4px, 4px); }
+            60% { transform: translate(4px, -4px); }
+            70% { transform: translate(-5px, 5px); }
             80% { transform: translate(5px, -5px); }
+            90% { transform: translate(0); }
             100% { transform: translate(0); }
         }
 

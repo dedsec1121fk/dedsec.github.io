@@ -17,10 +17,10 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-            overflow-y: auto; /* Allow vertical scrolling */
+            justify-content: center; /* Center content vertically */
+            height: 100vh; /* Full viewport height */
+            overflow: hidden; /* Prevent scrolling */
             transition: background-color 0.5s; /* Smooth transition for color change */
-            padding: 2vw; /* Padding to keep content within screen borders */
         }
 
         h1 {
@@ -73,7 +73,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            height: 100%; /* Ensure content fills available space */
+            height: auto; /* Ensure content adjusts automatically */
             z-index: 10; /* Ensure content is above the background */
         }
 

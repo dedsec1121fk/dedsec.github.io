@@ -38,21 +38,11 @@
             margin: 10px 0; /* Spacing between paragraphs */
         }
 
-        /* Glitch effect */
-        @keyframes glitch {
-            0% {
-                text-shadow: 2px 2px #ff0000;
-            }
-            50% {
-                text-shadow: -2px -2px #00ff00;
-            }
-            100% {
-                text-shadow: 2px 2px #ff0000;
-            }
-        }
-        
-        .glitch {
-            animation: glitch 1s infinite;
+        /* Clock styles */
+        .clock {
+            font-size: calc(1.5vw + 1.5vh + 20px); /* Responsive font size */
+            color: #ffcc00; /* Gold color for the clock */
+            margin-bottom: 20px;
         }
 
         /* Image styles */
@@ -78,14 +68,37 @@
         <!-- Header image -->
         <img src="skull-icon.jpg" alt="Skull Icon" class="header-icon">
 
-        <p class="glitch">Name: <strong>dedsec1121fk</strong></p>
+        <!-- Live clock -->
+        <div class="clock" id="liveClock"></div>
+
+        <p>Name: <strong>dedsec1121fk</strong></p>
         <p>Instagram: <strong>ds1121fk</strong></p>
         <p>Thanks to: <strong>Watch Dogs (27 May 2014)</strong></p>
         <p>Programming In: <strong>Termux Python</strong></p>
         <p>Programs Used For: <strong>Cyber Security, Applications And More</strong></p>
-        <p>Dumb-Boy Project: <a href="https://github.com/dedsec1121fk/Dumb-Boy" target="_blank">Dumb-Boy</a></p>
+        <p>Check the Dumb-Boy Project By Tapping Here: <a href="https://github.com/dedsec1121fk/Dumb-Boy" target="_blank">Dumb-Boy</a></p>
         <p style="font-size: small;">(Dumb Boy is a suite of tools for enhancing the Termux experience, offering functionalities for developers, cybersecurity enthusiasts, and terminal users. It has a variety of tools and programs for any user.)</p>
-        <p class="glitch">Donate using USDT (Ethereum Network): <strong>0x491Eac72C5571296DD17d2D8450</strong></p>
+        <p>Donate using USDT (Ethereum Network): <strong>0x491Eac72C5571296DD17d2D8450</strong></p>
     </div>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const dd = String(now.getDate()).padStart(2, '0');
+            const mm = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+            const yyyy = now.getFullYear();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+
+            const formattedTime = `${dd}/${mm}/${yyyy} ${hours}:${minutes}:${seconds}`;
+            document.getElementById('liveClock').textContent = formattedTime;
+        }
+
+        // Update the clock every second
+        setInterval(updateClock, 1000);
+        // Initial call to display clock immediately
+        updateClock();
+    </script>
 </body>
 </html>

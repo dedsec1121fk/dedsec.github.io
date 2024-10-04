@@ -2,18 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com; img-src 'self'; object-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; block-all-mixed-content; upgrade-insecure-requests;">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Referrer-Policy" content="no-referrer">
-    <meta http-equiv="Permissions-Policy" content="geolocation=(), camera=(), microphone=(), payment=()">
-    <meta name="X-XSS-Protection" content="1; mode=block">
-    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta name="robots" content="noindex, nofollow">
-    <meta name="description" content="dedsec1121fk's project. Protected and secure page with DedSec's message.">
     <title>dedsec1121fk</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
@@ -64,41 +53,7 @@
             margin-bottom: 20px; /* Spacing below clock */
         }
 
-        /* Button Styles */
-        .button {
-            background-color: #00ffff; /* Cyan button background */
-            color: black; /* Black text on button */
-            border: none;
-            padding: 10px 20px;
-            text-align: center;
-            text-transform: uppercase;
-            font-size: 4vw; /* Responsive font size */
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .button:hover {
-            background-color: #00cccc; /* Darken on hover */
-            transform: scale(1.05); /* Slight scale up on hover */
-        }
-
-        /* Content visibility handling */
-        .content, .message {
-            display: none; /* Hide content by default */
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100%; /* Ensure content fills available space */
-            z-index: 10; /* Ensure content is above the background */
-        }
-
-        .active {
-            display: flex; /* Show active section */
-        }
-
+        /* Image styles */
         .header-icon {
             width: 20vw; /* Smaller responsive width */
             max-width: 100px; /* Maximum width */
@@ -108,48 +63,53 @@
             transition: transform 0.2s; /* Smooth transformation */
         }
 
+        /* Overall container */
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%; /* Ensure content fills available space */
+            z-index: 10; /* Ensure content is above the background */
+        }
+
+        /* Message for PC users */
+        .pc-message {
+            display: none; /* Hidden by default */
+            font-size: 2em; /* Size for the PC message */
+            color: white; /* Color for the PC message */
+        }
+
         @media screen and (min-width: 768px) {
-            .content, .message {
-                display: none; /* Hide content on larger screens */
+            .content {
+                display: none; /* Hide content on PC */
             }
 
             .pc-message {
                 display: block; /* Show PC message on larger screens */
-                font-size: 2em;
-                color: white;
             }
         }
     </style>
 </head>
 <body>
-    <!-- First Page Content -->
-    <div class="content active" id="content1">
+    <div class="content">
+        <!-- Title -->
         <h1>THE RETURN OF DEDSEC</h1>
+
+        <!-- Header image with onclick event to trigger glitch -->
         <img src="skull-icon.jpg" alt="Skull Icon" class="header-icon" id="skullIcon" onclick="triggerColorChange()">
+
+        <!-- Live clock -->
         <div class="clock" id="liveClock"></div>
 
-        <p>GitHub Username: <a href="https://github.com/dedsec1121fk" target="_blank" rel="noopener noreferrer">dedsec1121fk</a></p>
-        <p>Check The Dumb-Boy Project: <a href="https://github.com/dedsec1121fk/Dumb-Boy" target="_blank" rel="noopener noreferrer">Dumb-Boy</a></p>
+        <p>GitHub Username: <a href="https://github.com/dedsec1121fk" target="_blank">dedsec1121fk</a></p>
+        <p>Check The Dumb-Boy Project: <a href="https://github.com/dedsec1121fk/Dumb-Boy" target="_blank">Dumb-Boy</a></p>
 
         <p style="font-size: 3.5vw;">(Capture images remotely using device cameras for phishing purposes while logging user data, manage files through a browser interface for easy uploading, downloading, and searching, collect personal information through secure web forms for phishing attacks, personalize the terminal experience with custom prompts and visual enhancements, automate the setup of a coding environment for hacking tasks with essential packages and plugins, gather public data for OSINT tasks such as email validation and social media profile retrieval for investigative hacking, and securely manage user logins with hashed credentials for secure authentication.)</p>
 
         <p>Donate using USDT (Ethereum Network): <strong>0x491Eac72C5571296DD17d2D8450</strong></p>
+        
         <p>Thanks to: <strong>Watch Dogs (27 May 2014)</strong></p>
-
-        <button class="button" onclick="showMessage()">Read DedSec's Message</button>
-    </div>
-
-    <!-- Second Page Content -->
-    <div class="message" id="content2">
-        <h1>DedSec's Message</h1>
-        <p>Wars are not ours.<br>Wars belong to the leaders.<br>Choose whether you want to die in battle or live in prison.</p>
-        <p>If no one goes to war, there is no war.<br>We no longer fight to keep what we have, we fight because some want more.</p>
-        <p>The fewer people in the army, the easier it will be to stop wars.<br>If you want something real to happen, organize protests, take to the streets.</p>
-        <p>History has shown that when the people want, they take control, but don't forget that losses are part of the game.</p>
-        <p>Would you rather die by your own choice for your beliefs, or in a war for some rich person?</p>
-        <p><strong>DedSec has given you the truth, now do with it what you will.</strong></p>
-
-        <button class="button" onclick="showContent()">Back to Home</button>
     </div>
 
     <!-- Message for PC users -->
@@ -185,16 +145,6 @@
                 clearInterval(interval); // Stop color change after 40 seconds
                 document.body.style.backgroundColor = '#0b0b0b'; // Reset to original color
             }, 40000); // Stop after 40 seconds
-        }
-
-        function showMessage() {
-            document.getElementById('content1').classList.remove('active'); // Hide content1
-            document.getElementById('content2').classList.add('active'); // Show content2
-        }
-
-        function showContent() {
-            document.getElementById('content2').classList.remove('active'); // Hide content2
-            document.getElementById('content1').classList.add('active'); // Show content1
         }
 
         // Update the clock every second

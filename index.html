@@ -34,6 +34,16 @@
             transition: background-color 0.5s; /* Smooth transition for color change */
         }
 
+        a {
+            color: #00ffff; /* Cyan links */
+            text-decoration: none;
+            transition: text-shadow 0.3s;
+        }
+
+        a:hover {
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+        }
+
         h1 {
             color: red; /* Red color for the title */
             margin: 20px 0; /* Spacing above and below the title */
@@ -47,6 +57,7 @@
             font-size: 4vw; /* Responsive font size for paragraphs */
         }
 
+        /* Clock styles */
         .clock {
             font-size: 5vw; /* Responsive font size for clock */
             color: green; /* Green color for the clock */

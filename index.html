@@ -5,9 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>dedsec1121fk</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        
         body {
             background-color: black;
-            color: white;
+            color: #00ff00;
+            font-family: 'VT323', monospace; /* Digital, hacker-style font */
             text-align: center;
             margin: 0;
             height: 100vh;
@@ -17,16 +20,60 @@
             font-size: calc(1vw + 1vh + 10px);
             overflow: hidden;
         }
+
+        a {
+            color: #00ffff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-shadow: 0 0 5px #00ffff;
+        }
+
+        p {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Glitch effect */
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px #ff0000;
+            }
+            50% {
+                text-shadow: -2px -2px #00ff00;
+            }
+            100% {
+                text-shadow: 2px 2px #ff0000;
+            }
+        }
+        
+        .glitch {
+            animation: glitch 1s infinite;
+        }
+
+        /* Image styles */
+        .header-icon {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <div>
-        <p>Name: <strong>dedsec1121fk</strong></p>
+        <!-- Header image -->
+        <img src="skull-icon.jpg" alt="Skull Icon" class="header-icon">
+
+        <p class="glitch">Name: <strong>dedsec1121fk</strong></p>
         <p>Instagram: <strong>ds1121fk</strong></p>
         <p>Thanks to: <strong>Watch Dogs (27 May 2014)</strong></p>
         <p>Programming In: <strong>Termux Python</strong></p>
         <p>Programs Used For: <strong>Cyber Security, Applications And More</strong></p>
-        <p>Donate using USDT (Ethereum Network): <strong>0x491Eac72C5571296DD17d2D8450</strong></p>
+        <p>Dumb-Boy Project: <a href="https://github.com/dedsec1121fk/Dumb-Boy" target="_blank">Dumb-Boy</a></p>
+        <p style="font-size: small;">(Dumb Boy is a suite of tools for enhancing the Termux experience, offering functionalities for developers, cybersecurity enthusiasts, and terminal users. It has a variety of tools and programs for any user.)</p>
+        <p class="glitch">Donate using USDT (Ethereum Network): <strong>0x491Eac72C5571296DD17d2D8450</strong></p>
     </div>
 </body>
 </html>
+

@@ -20,6 +20,7 @@
             align-items: center;
             height: 100vh; /* Full viewport height */
             overflow: hidden; /* Prevent scrolling */
+            transition: all 0.2s; /* Smooth transition for glitch effect */
         }
 
         a {
@@ -62,8 +63,9 @@
             transition: transform 0.2s; /* Smooth transformation */
         }
 
+        /* Glitch effect styles */
         .glitch {
-            animation: glitch 1s infinite; /* Glitch animation */
+            animation: glitch 0.5s infinite; /* Glitch animation */
         }
 
         @keyframes glitch {
@@ -137,16 +139,15 @@
             const hours = String(now.getHours()).padStart(2, '0');
             const minutes = String(now.getMinutes()).padStart(2, '0');
             const seconds = String(now.getSeconds()).padStart(2, '0');
-            const milliseconds = String(now.getMilliseconds()).padStart(3, '0'); // Get milliseconds
 
-            const formattedTime = `${dd}/${mm}/${yyyy} ${hours}:${minutes}:${seconds}:${milliseconds}`;
+            const formattedTime = `${dd}/${mm}/${yyyy} ${hours}:${minutes}:${seconds}`;
             document.getElementById('liveClock').textContent = formattedTime;
         }
 
         function triggerGlitch() {
-            const skullIcon = document.getElementById('skullIcon');
-            skullIcon.classList.add('glitch'); // Add glitch class
-            setTimeout(() => skullIcon.classList.remove('glitch'), 1000); // Remove glitch class after 1 second
+            const body = document.body; // Get the body element
+            body.classList.add('glitch'); // Add glitch class to body
+            setTimeout(() => body.classList.remove('glitch'), 1000); // Remove glitch class after 1 second
         }
 
         // Update the clock every second

@@ -25,22 +25,22 @@
 
         h1 {
             color: red; /* Red color for the title */
-            margin: 20px 0; /* Spacing above and below the title */
-            font-size: 8vw; /* Responsive font size for title */
+            margin: 2vh 0; /* Margin above and below the title */
+            font-size: 6vw; /* Responsive font size for title */
         }
 
         p {
             text-transform: uppercase;
             letter-spacing: 1px; /* Slightly reduced spacing */
-            margin: 5px 0; /* Spacing between paragraphs */
-            font-size: 4vw; /* Responsive font size for paragraphs */
+            margin: 1vh 0; /* Spacing between paragraphs */
+            font-size: 3.5vw; /* Responsive font size for paragraphs */
         }
 
         /* Clock styles */
         .clock {
             font-size: 5vw; /* Responsive font size for clock */
             color: red; /* Red color for the clock, same as title */
-            margin-bottom: 20px; /* Spacing below clock */
+            margin-bottom: 2vh; /* Spacing below clock */
         }
 
         /* Button Styles */
@@ -48,7 +48,7 @@
             background-color: purple; /* Purple button background */
             color: white; /* White text on button */
             border: none;
-            padding: 10px 20px;
+            padding: 2vh 4vw;
             text-align: center;
             text-transform: uppercase;
             font-size: 4vw; /* Responsive font size */
@@ -56,7 +56,7 @@
             cursor: pointer;
             transition: background-color 0.3s, transform 0.2s;
             border-radius: 5px;
-            margin-top: 20px;
+            margin-top: 2vh;
         }
 
         .button:hover {
@@ -82,9 +82,46 @@
             width: 20vw; /* Smaller responsive width */
             max-width: 100px; /* Maximum width */
             height: auto; /* Maintain aspect ratio */
-            margin-bottom: 20px; /* Spacing below image */
+            margin-bottom: 2vh; /* Spacing below image */
             cursor: pointer; /* Pointer cursor on hover */
             transition: transform 0.2s; /* Smooth transformation */
+        }
+
+        /* Responsive media queries for very small and very large screens */
+        @media screen and (min-width: 1200px) {
+            h1 {
+                font-size: 4vw; /* Slightly smaller font size for large screens */
+            }
+
+            p {
+                font-size: 2.5vw; /* Slightly smaller paragraph text on large screens */
+            }
+
+            .clock {
+                font-size: 4vw; /* Slightly smaller clock */
+            }
+
+            .button {
+                font-size: 3vw; /* Slightly smaller button text */
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            h1 {
+                font-size: 8vw; /* Larger font size for smaller screens */
+            }
+
+            p {
+                font-size: 4.5vw; /* Larger font size for smaller screens */
+            }
+
+            .clock {
+                font-size: 6vw; /* Larger clock size for small screens */
+            }
+
+            .button {
+                font-size: 5vw; /* Larger button text */
+            }
         }
 
         @media screen and (min-width: 768px) {

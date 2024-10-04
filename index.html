@@ -141,6 +141,11 @@
     </style>
 </head>
 <body>
+    <!-- Message for PC users -->
+    <div class="pc-message" id="pcMessage">
+        USE A PHONE IDIOT!
+    </div>
+
     <!-- First Page Content -->
     <div class="content active" id="content1">
         <h1>THE RETURN OF DEDSEC</h1>
@@ -181,12 +186,17 @@
         <button class="button" onclick="showContent()">Back to Home</button>
     </div>
 
-    <!-- Message for PC users -->
-    <div class="pc-message">
-        USE A PHONE IDIOT!
-    </div>
-
     <script>
+        // Check if the user is on a desktop
+        if (window.innerWidth >= 768) {
+            document.getElementById('pcMessage').style.display = 'block'; // Show PC message
+            document.getElementById('content1').style.display = 'none'; // Hide content
+        } else {
+            // Initialize content for mobile users
+            document.getElementById('pcMessage').style.display = 'none'; // Hide PC message
+            document.getElementById('content1').style.display = 'flex'; // Show content
+        }
+
         function updateClock() {
             const now = new Date();
             const dd = String(now.getDate()).padStart(2, '0');

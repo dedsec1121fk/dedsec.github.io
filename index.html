@@ -20,6 +20,7 @@
             overflow-x: hidden; /* Prevent horizontal scrolling */
             overflow-y: auto; /* Allow vertical scrolling */
             transition: background-color 0.5s; /* Smooth transition for color change */
+            padding: 2vw; /* Padding to keep content within screen borders */
         }
 
         h1 {
@@ -90,6 +91,18 @@
             max-width: 90%; /* Limit width to avoid overflow */
         }
 
+        .pc-message {
+            display: none; /* Hide by default */
+            font-size: 2em; /* Size for the PC message */
+            color: white; /* Color for the PC message */
+        }
+
+        @media screen and (min-width: 768px) {
+            .pc-message {
+                display: block; /* Show PC message on larger screens */
+            }
+        }
+
         @media screen and (min-width: 1200px) {
             h1 {
                 font-size: 4vw; /* Slightly smaller font size for large screens */
@@ -123,18 +136,6 @@
 
             .button {
                 font-size: 5vw; /* Larger button text */
-            }
-        }
-
-        @media screen and (min-width: 768px) {
-            .content, .message {
-                display: none; /* Hide content on larger screens */
-            }
-
-            .pc-message {
-                display: block; /* Show PC message on larger screens */
-                font-size: 2em;
-                color: white;
             }
         }
     </style>

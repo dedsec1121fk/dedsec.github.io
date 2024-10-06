@@ -6,91 +6,73 @@
     <title>The Return Of DedSec</title>
     <style>
         body {
-            background-color: black;
-            color: white; /* Default text color */
+            background-color: #000;
+            color: #FFFFFF;
+            font-family: 'Courier New', Courier, monospace; /* Terminal font */
             text-align: center;
-            margin: 0;
-            padding: 0;
+            overflow-y: scroll;
         }
         h1 {
-            color: red; /* Title color */
-            font-size: 3em;
+            color: #FF0000; /* Red */
+        }
+        h2 {
+            color: #FFCC00; /* Yellow */
+            margin-top: 20px;
+        }
+        p {
+            color: #00FF00; /* Green */
+            font-size: 18px; /* Slightly larger */
+        }
+        .download-button {
+            background-color: #800080; /* Purple */
+            color: #FFFFFF;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .download-button:hover {
+            background-color: #A020F0; /* Lighter purple on hover */
+        }
+        footer {
+            display: none; /* No footer */
         }
         img {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            vertical-align: middle;
-        }
-        a.button {
-            display: inline-block;
-            background-color: purple;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
-        a.button:hover {
-            background-color: #800080;
-        }
-        .content {
-            margin: 20px;
-            font-size: 1.2em;
-            line-height: 1.5;
-            text-align: justify;
-            display: inline-block;
-            max-width: 800px;
-            text-align: left;
-            color: yellow; /* Default color for content */
-        }
-        h2, h3, h4 {
-            color: blue; /* Color for headings */
+            width: 50px; /* Icon size */
+            vertical-align: middle; /* Aligns the icon with the button */
+            margin-right: 10px; /* Space between icon and button */
         }
         .disclaimer {
-            font-size: 1em;
-            color: red; /* Disclaimer color */
+            color: #FF0000; /* Red */
             margin-top: 40px;
-            text-align: center;
         }
     </style>
 </head>
 <body>
+
     <h1>The Return Of DedSec</h1>
-    <img src="https://github.com/dedsec1121fk/dedsec.github.io/raw/main/skull-icon.jpg" alt="DedSec Logo">
-    <a href="https://github.com/dedsec1121fk/dedsec.github.io/raw/main/Dumb-Boy.zip" class="button" download>Dumb-Boy.zip</a>
-    
-    <div class="content">
-        <h2>What is Dumb Boy Project?</h2>
-        <p>Dumb Boy is a suite of tools for enhancing the Termux experience, offering functionalities for developers, cybersecurity enthusiasts, and terminal users.</p>
+    <img src="https://github.com/dedsec1121fk/dedsec.github.io/blob/main/skull-icon.jpg" alt="DedSec Logo">
+    <br>
+    <a href="https://github.com/dedsec1121fk/dedsec.github.io/blob/main/Dumb-Boy.zip" class="download-button" download>Dumb-Boy.zip</a>
 
-        <h3>Dumb Boy Features</h3>
-        <h4>Camera Phish</h4>
-        <p>Camera Phish is a web application that allows users to capture images using their device's front or back camera. Built with Flask, this tool creates a seamless interface for users to remotely access their camera feed and save captured images directly to their device.</p>
+    <h2>What is Dumb Boy Project?</h2>
+    <p>Dumb Boy is a suite of tools for enhancing the Termux experience, offering functionalities for developers, cybersecurity enthusiasts, and terminal users.</p>
 
-        <h4>DedSec Database</h4>
-        <p>The DedSec Database is a Flask-based web application designed for efficient file management through a browser interface. Users can upload, list, download, and delete files with ease, all facilitated by a simple and effective design.</p>
+    <h2>Dumb Boy Features</h2>
+    <p>
+        <strong>Camera Phish:</strong> A web app for capturing images using device cameras.<br>
+        <strong>DedSec Database:</strong> Efficient file management via a browser interface.<br>
+        <strong>Donation Phishing:</strong> Collects personal info through secure web forms.<br>
+        <strong>Customization:</strong> Personalizes the terminal experience in Termux.<br>
+        <strong>NAIOVUM:</strong> Simplifies Neovim setup in Termux.<br>
+        <strong>OSINTDS:</strong> Automates gathering data for OSINT tasks.<br>
+        <strong>T-Login:</strong> Secure login management within Termux.
+    </p>
 
-        <h4>Donation Phishing</h4>
-        <p>Donation Phishing is an educational tool that demonstrates the collection of personal information through a secure web form. It utilizes Flask to handle form submissions, saving the submitted data in text files while ensuring accessibility via a public URL provided by Serveo.</p>
+    <p class="disclaimer">
+        Disclaimer: The Dumb Boy project is intended for educational and informational purposes only. Users are encouraged to apply ethical considerations and ensure compliance with local laws and regulations while utilizing these tools. The developer is not responsible for any illegal or unethical actions taken by users of this software. Use these tools responsibly and in accordance with applicable laws.
+    </p>
 
-        <h4>Customization</h4>
-        <p>This tool is designed to enhance the terminal experience in Termux by updating the .bashrc configuration and setting a customized Message of the Day (MOTD). It provides an easy way to personalize your terminal environment.</p>
-
-        <h4>NAIOVUM</h4>
-        <p>NAIOVUM simplifies the setup and configuration of Neovim within Termux. It automates the installation of essential packages, plugins, and customized settings, enhancing the coding environment for developers and power users.</p>
-
-        <h4>OSINTDS</h4>
-        <p>OSINTDS is a powerful tool for performing OSINT (Open Source Intelligence) tasks. This application automates the gathering of data from public sources such as emails, phone numbers, social media profiles, and web searches.</p>
-
-        <h4>T-Login</h4>
-        <p>T-Login is a script designed for secure login management within Termux. It simplifies the setup of username and password credentials, providing a secure approach to user authentication.</p>
-    </div>
-
-    <div class="disclaimer">
-        <p><strong>Disclaimer:</strong> The Dumb Boy project is intended for educational and informational purposes only. Users are encouraged to apply ethical considerations and ensure compliance with local laws and regulations while utilizing these tools. The developer is not responsible for any illegal or unethical actions taken by users of this software. Use these tools responsibly and in accordance with applicable laws.</p>
-    </div>
 </body>
 </html>

@@ -205,49 +205,36 @@
             document.getElementById('content2').style.display = 'none'; // Hide content
         }
 
-        function updateClock() {
-            const now = new Date();
-            const dd = String(now.getDate()).padStart(2, '0');
-            const mm = String(now.getMonth() + 1).padStart(2, '0'); // Months are zero-based
-            const yyyy = now.getFullYear();
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-
-            const formattedTime = `${dd}/${mm}/${yyyy} ${hours}:${minutes}:${seconds}`;
-            document.getElementById('liveClock').textContent = formattedTime;
-        }
-
-        function triggerColorChange() {
-            const colors = ["#000000", "#ff0000", "#00ff00", "#0000ff", "#ffff00", "#ff00ff", "#00ffff"];
-            let i = 0;
-
-            const interval = setInterval(() => {
-                document.body.style.backgroundColor = colors[i];
-                i++;
-                if (i >= colors.length) i = 0;
-            }, 2000); // Change color every 2 seconds
-
-            setTimeout(() => {
-                clearInterval(interval); // Stop color change after 40 seconds
-                document.body.style.backgroundColor = '#000000'; // Reset to original color
-            }, 40000); // Stop after 40 seconds
-        }
-
         function showMessage() {
-            document.getElementById('content1').style.display = 'none'; // Hide content1
-            document.getElementById('content2').style.display = 'flex'; // Show content2
+            document.getElementById('content1').classList.remove('active');
+            document.getElementById('content2').classList.add('active');
         }
 
         function showContent() {
-            document.getElementById('content2').style.display = 'none'; // Hide content2
-            document.getElementById('content1').style.display = 'flex'; // Show content1
+            document.getElementById('content2').classList.remove('active');
+            document.getElementById('content1').classList.add('active');
         }
 
-        // Update the clock every second
-        setInterval(updateClock, 1000);
-        // Initial call to display clock immediately
-        updateClock();
+        // Real-time clock display
+        function updateTime() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            document.getElementById("liveClock").innerHTML = (hours < 10 ? '0' : '') + hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+        }
+
+        // Update clock every second
+        setInterval(updateTime, 1000);
+
+        // Function to trigger background color change
+        function triggerColorChange() {
+            var colors = ['#000000', '#550000', '#000055', '#330033'];
+            var bodyElement = document.body;
+            var currentColor = bodyElement.style.backgroundColor;
+            var newColor = colors[(colors.indexOf(currentColor) + 1) % colors.length];
+            bodyElement.style.backgroundColor = newColor;
+        }
     </script>
 </body>
 </html>

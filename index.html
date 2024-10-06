@@ -19,22 +19,37 @@
         h1 {
             color: red;
             font-size: 3em;
+            margin: 20px 0;
+            display: inline-block; /* Inline block for the title */
+        }
+        .label {
+            display: inline-block;
+            background-color: purple;
+            color: white;
+            padding: 5px 10px;
+            margin-left: 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
         }
         h2 {
-            color: #1abc9c;
-            font-size: 2.5em;
+            color: #1abc9c; /* Adjust color for headings */
+            font-size: 2em;
+            margin: 15px 0;
         }
         h4 {
-            color: #e67e22;
+            color: #e67e22; /* Subheadings */
+            margin: 10px 0;
         }
         p {
-            color: #3498db; /* Blue for descriptions */
+            color: #3498db; /* Description text color */
+            margin: 10px 0;
         }
         img {
             display: inline-block;
             width: 50px;
             height: 50px;
             vertical-align: middle;
+            margin-right: 10px; /* Space between image and button */
         }
         a.button {
             display: inline-block;
@@ -44,15 +59,14 @@
             font-size: 1.2em;
             text-decoration: none;
             border-radius: 5px;
-            margin-top: 20px;
-            margin-bottom: 40px;
+            margin: 20px 0;
         }
         a.button:hover {
-            background-color: #800080;
+            background-color: #800080; /* Darker purple on hover */
         }
         .content {
-            margin: 20px;
-            font-size: 1.2em;
+            margin: 20px auto;
+            font-size: 1.1em;
             line-height: 1.5;
             text-align: justify;
             display: inline-block;
@@ -66,16 +80,15 @@
             display: inline-block;
             background-color: purple;
             color: white;
-            padding: 5px 10px;
+            padding: 10px;
             font-size: 1em;
             border-radius: 5px;
-            margin-top: 20px;
-            margin-bottom: 40px;
+            margin: 20px 0;
         }
         .disclaimer {
             font-size: 1em;
             color: red;
-            margin-top: 40px;
+            margin: 40px 0;
             text-align: center;
             background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background for disclaimer */
             padding: 10px;
@@ -85,6 +98,7 @@
 </head>
 <body>
     <h1>The Return Of DedSec</h1>
+    <span class="label">Dumb Boy Project</span>
     <img src="https://github.com/dedsec1121fk/dedsec.github.io/raw/main/skull-icon.jpg" alt="DedSec Logo">
     <a href="https://github.com/dedsec1121fk/dedsec.github.io/raw/main/Dumb-Boy.zip" class="button" download>Dumb-Boy.zip</a>
     <div class="content">

@@ -2,239 +2,155 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>dedsec1121fk</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Return Of DedSec</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@400;700&display=swap');
-
         body {
-            background-color: #000000; /* Darkest background */
-            color: white; /* White text color */
-            font-family: 'Ubuntu Mono', monospace; /* Terminal font */
-            text-align: center;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center; /* Center content vertically */
-            height: 100vh; /* Full viewport height */
-            overflow: hidden; /* Prevent scrolling */
-            transition: background-color 0.5s; /* Smooth transition for color change */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            overflow-y: auto; /* Allows vertical scrolling */
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
-        h1 {
-            color: red; /* Red color for the title */
-            margin: 2vh 0; /* Margin above and below the title */
-            font-size: 6vw; /* Responsive font size for title */
-            max-width: 90%; /* Limit width to avoid overflow */
-        }
-
-        p {
-            text-transform: uppercase;
-            letter-spacing: 1px; /* Slightly reduced spacing */
-            margin: 1vh 0; /* Spacing between paragraphs */
-            font-size: 16px; /* Set to 16px to match chat font size */
-            max-width: 90%; /* Limit width to avoid overflow */
-        }
-
-        /* Clock styles */
-        .clock {
-            font-size: 5vw; /* Responsive font size for clock */
-            color: red; /* Red color for the clock, same as title */
-            margin-bottom: 2vh; /* Spacing below clock */
-        }
-
-        /* Button Styles */
-        .button {
-            background-color: purple; /* Purple button background */
-            color: white; /* White text on button */
-            border: none;
-            padding: 1vh 2vw; /* Smaller padding */
+        header, footer {
+            background-color: #333;
+            color: white;
             text-align: center;
-            text-transform: uppercase;
-            font-size: 16px; /* Set to 16px to match chat font size */
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            padding: 1em 0;
+        }
+
+        main {
+            padding: 1em;
+            max-width: 800px; /* Maximum width for main content */
+            margin: 0 auto; /* Center the content */
+        }
+
+        h1, h2, h3, h4 {
+            margin: 0.5em 0;
+        }
+
+        p, ul {
+            font-size: 1.1em; /* Base font size for text */
+            margin: 0.5em 0;
+        }
+
+        .download-button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #007BFF; /* Bootstrap primary color */
+            border: none;
             border-radius: 5px;
-            margin-left: 10px; /* Add space between text and button */
-            max-width: 90%; /* Limit width to avoid overflow */
+            text-decoration: none;
+            cursor: pointer;
         }
 
-        .button:hover {
-            background-color: #7d00ff; /* Lighter purple on hover */
-            transform: scale(1.05); /* Slight scale up on hover */
+        .download-button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
         }
 
-        /* Content visibility handling */
-        .content, .message {
-            display: none; /* Hide content by default */
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: auto; /* Ensure content adjusts automatically */
-            z-index: 10; /* Ensure content is above the background */
-        }
-
-        .active {
-            display: flex; /* Show active section */
-        }
-
-        .header-icon {
-            width: 15vw; /* Smaller responsive width for the icon */
-            max-width: 80px; /* Maximum width for the icon */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 2vh; /* Spacing below image */
-            cursor: pointer; /* Pointer cursor on hover */
-            transition: transform 0.2s; /* Smooth transformation */
-            max-width: 90%; /* Limit width to avoid overflow */
-        }
-
-        .pc-message {
-            display: none; /* Hide by default */
-            font-size: 2em; /* Size for the PC message */
-            color: white; /* Color for the PC message */
-        }
-
-        @media screen and (min-width: 768px) {
-            .pc-message {
-                display: block; /* Show PC message on larger screens */
+        @media (max-width: 600px) {
+            p, ul {
+                font-size: 1em; /* Smaller font size for mobile */
             }
-        }
-
-        @media screen and (min-width: 1200px) {
-            h1 {
-                font-size: 4vw; /* Slightly smaller font size for large screens */
-            }
-
-            p {
-                font-size: 16px; /* Set to 16px to match chat font size */
-            }
-
-            .clock {
-                font-size: 4vw; /* Slightly smaller clock */
-            }
-
-            .button {
-                font-size: 16px; /* Set to 16px to match chat font size */
-            }
-        }
-
-        @media screen and (max-width: 600px) {
-            h1 {
-                font-size: 8vw; /* Larger font size for smaller screens */
-            }
-
-            p {
-                font-size: 16px; /* Set to 16px to match chat font size */
-            }
-
-            .clock {
-                font-size: 6vw; /* Larger clock size for small screens */
-            }
-
-            .button {
-                font-size: 16px; /* Set to 16px to match chat font size */
-            }
-        }
-
-        /* Additional styles for the second page to match the chat size */
-        .message p {
-            font-size: 16px; /* Set to match chat font size */
-            text-transform: none; /* Ensure regular case */
         }
     </style>
 </head>
 <body>
-    <!-- Message for PC users -->
-    <div class="pc-message" id="pcMessage">
-        USE A PHONE IDIOT!
-    </div>
+    <header>
+        <h1>The Return Of DedSec</h1>
+        <img src="path/to/your/image.png" alt="DedSec Logo" style="max-width: 100%; height: auto; margin: 10px 0;"> <!-- Replace with your actual image path -->
+        <a href="https://github.com/dedsec1121fk/dumb-boy/releases/latest/download/dumb-boy.zip" class="download-button" download>Download dumb-boy.zip</a>
+    </header>
 
-    <!-- First Page Content -->
-    <div class="content active" id="content1">
-        <h1>THE RETURN OF DEDSEC</h1>
-        <img src="skull-icon.jpg" alt="Skull Icon" class="header-icon" id="skullIcon" onclick="triggerColorChange()">
-        <div class="clock" id="liveClock"></div>
+    <main>
+        <h2>What is Dumb Boy Project?</h2>
+        <p>Dumb Boy is a suite of tools for enhancing the Termux experience, offering functionalities for developers, cybersecurity enthusiasts, and terminal users.</p>
 
-        <!-- GitHub Username Button -->
-        <div style="display: flex; align-items: center;">
-            <p>GitHub Username:</p>
-            <button class="button" onclick="window.open('https://github.com/dedsec1121fk', '_blank')">dedsec1121fk</button>
-        </div>
+        <h3>Dumb Boy Features</h3>
 
-        <!-- Dumb-Boy Project Button -->
-        <div style="display: flex; align-items: center;">
-            <p>Check The Dumb-Boy Project:</p>
-            <button class="button" onclick="window.open('https://github.com/dedsec1121fk/Dumb-Boy', '_blank')">Dumb-Boy</button>
-        </div>
+        <h4>Camera Phish</h4>
+        <p>Camera Phish is a web application that allows users to capture images using their device's front or back camera. Built with Flask, this tool creates a seamless interface for users to remotely access their camera feed and save captured images directly to their device.</p>
+        <ul>
+            <li><strong>Camera Access:</strong> Utilizes both front and back cameras to take snapshots, offering versatility for various use cases.</li>
+            <li><strong>Image Storage:</strong> Captured images are stored in a dedicated directory (Downloads/Camera-Phish), making retrieval straightforward.</li>
+            <li><strong>IP Logging:</strong> Logs the IP address and user agent of each user, providing valuable data for analysis and tracking.</li>
+            <li><strong>Serveo Integration:</strong> Establishes a secure tunnel for remote access using Serveo, making it easy to share camera access over the internet.</li>
+            <li><strong>Responsive UI:</strong> Features a user-friendly interface for monitoring the camera feed and capturing images in real time.</li>
+        </ul>
 
-        <p style="font-size: 3.5vw;">(Capture images remotely using device cameras for phishing purposes while logging user data, manage files through a browser interface for easy uploading, downloading, and searching, collect personal information through secure web forms for phishing attacks, personalize the terminal experience with custom prompts and visual enhancements, automate the setup of a coding environment for hacking tasks with essential packages and plugins, gather public data for OSINT tasks such as email validation and social media profile retrieval for investigative hacking, and securely manage user logins with hashed credentials for secure authentication.)</p>
+        <h4>DedSec Database</h4>
+        <p>The DedSec Database is a Flask-based web application designed for efficient file management through a browser interface. Users can upload, list, download, and delete files with ease, all facilitated by a simple and effective design.</p>
+        <ul>
+            <li><strong>File Uploading:</strong> Easily upload files to the server, making it a robust tool for document management.</li>
+            <li><strong>File Listing and Management:</strong> View uploaded files with intuitive options to download or delete, streamlining file operations.</li>
+            <li><strong>File Search Functionality:</strong> Search for files by name to quickly find what you need without sifting through long lists.</li>
+            <li><strong>Serveo Tunnel:</strong> Utilizes Serveo to expose the application over the web, allowing remote access via a publicly accessible URL.</li>
+            <li><strong>Responsive Design:</strong> Adapts to various screen sizes, ensuring a consistent experience across devices.</li>
+        </ul>
 
-        <p>Donate using USDT (Ethereum Network): <strong>0x491Eac72C5571296DD17d2D8450</strong></p>
-        <p>Thanks to: <strong>Watch Dogs (27 May 2014)</strong></p>
+        <h4>Donation Phishing</h4>
+        <p>Donation Phishing is an educational tool that demonstrates the collection of personal information through a secure web form. It utilizes Flask to handle form submissions, saving the submitted data in text files while ensuring accessibility via a public URL provided by Serveo.</p>
+        <ul>
+            <li><strong>Form Submission:</strong> Users can submit their personal information, providing a practical example of data collection methods.</li>
+            <li><strong>Data Storage:</strong> Information is saved in text files within a dedicated People directory, organized for easy access.</li>
+            <li><strong>Serveo Tunneling:</strong> Makes the application accessible from anywhere via a Serveo tunnel, demonstrating remote data collection.</li>
+            <li><strong>Port Conflict Handling:</strong> Automatically resolves any port conflicts, ensuring smooth operation of the application.</li>
+        </ul>
 
-        <button class="button" onclick="showMessage()">Read DedSec's Message</button>
-    </div>
+        <h4>Customization</h4>
+        <p>This tool is designed to enhance the terminal experience in Termux by updating the .bashrc configuration and setting a customized Message of the Day (MOTD). It provides an easy way to personalize your terminal environment.</p>
+        <ul>
+            <li><strong>Custom PS1 Prompt:</strong> Updates the command prompt to display the date, time, username, and current directory, adding a visual flair to the terminal.</li>
+            <li><strong>ASCII Art MOTD:</strong> Introduces engaging ASCII art to the terminal’s MOTD, making each session more enjoyable and visually appealing.</li>
+            <li><strong>Error Logging:</strong> Captures any errors encountered during execution, making troubleshooting straightforward.</li>
+            <li><strong>Termux Compatibility:</strong> Tailored for use in Termux, accommodating its unique file structure and permissions.</li>
+        </ul>
 
-    <!-- Second Page Content -->
-    <div class="message" id="content2">
-        <h1>DedSec's Message</h1>
-        <p>Wars are not ours.<br>Wars belong to the leaders.<br>Choose whether you want to die in battle or live in prison.</p>
-        <p>If no one goes to war, there is no war.<br>We no longer fight to keep what we have, we fight because some want more.</p>
-        <p>The fewer people in the army, the easier it will be to stop wars.<br>If you want something real to happen, organize protests, take to the streets.</p>
-        <p>History has shown that when the people want, they take control, but don't forget that losses are part of the game.</p>
-        <p>Would you rather die by your own choice for your beliefs, or in a war for some rich person?</p>
-        <p>Share this page, show as many people as you can the reality. You can still save yourself and your children.</p>
-        <p><strong>DedSec has given you the truth, now do with it what you will.</strong></p>
+        <h4>NAIOVUM</h4>
+        <p>NAIOVUM simplifies the setup and configuration of Neovim within Termux. It automates the installation of essential packages, plugins, and customized settings, enhancing the coding environment for developers and power users.</p>
+        <ul>
+            <li><strong>Package Installation:</strong> Automatically installs necessary packages like Neovim, Python, and Git, streamlining the initial setup process.</li>
+            <li><strong>Plugin Management:</strong> Installs popular plugin managers such as Vim-Plug and Packer for hassle-free plugin management.</li>
+            <li><strong>Custom Configuration:</strong> Sets up a personalized init.vim with theme options (like Gruvbox and OneDark) and a selection of useful plugins.</li>
+            <li><strong>Python Support:</strong> Installs Python support for Neovim, enabling users to leverage Python for scripting and extensions.</li>
+            <li><strong>Backup and Restore:</strong> Offers functionality to back up and restore Neovim configurations, ensuring users can maintain their settings over time.</li>
+            <li><strong>Auto-Update Feature:</strong> Automatically updates Neovim and its plugins, keeping the environment up to date.</li>
+        </ul>
 
-        <button class="button" onclick="showContent()">Back to Home</button>
-    </div>
+        <h4>OSINTDS</h4>
+        <p>OSINTDS is a powerful tool for performing OSINT (Open Source Intelligence) tasks. This application automates the gathering of data from public sources such as emails, phone numbers, social media profiles, and web searches.</p>
+        <ul>
+            <li><strong>Email Lookup:</strong> Validates email addresses and checks if they have been compromised using the "Have I Been Pwned" API, enhancing security awareness.</li>
+            <li><strong>Instagram Lookup:</strong> Retrieves detailed information from public Instagram profiles, including follower count, bio, and verification status.</li>
+            <li><strong>IP Lookup:</strong> Geolocates IP addresses, providing details like country, city, ISP, and more, aiding in cybersecurity investigations.</li>
+            <li><strong>Phone Number Lookup:</strong> Validates phone numbers and retrieves associated carrier, region, and timezone information, useful for various verification processes.</li>
+            <li><strong>Web Search:</strong> Performs general web searches using Google to quickly retrieve relevant results for a given query.</li>
+            <li><strong>Username Search:</strong> Checks multiple social media platforms to locate public profiles associated with a given username, enhancing social media investigations.</li>
+        </ul>
 
-    <script>
-        // Check if the user is on a desktop
-        if (window.innerWidth >= 768) {
-            document.getElementById('pcMessage').style.display = 'block'; // Show PC message
-            document.getElementById('content1').style.display = 'none'; // Hide content
-            document.getElementById('content2').style.display = 'none'; // Hide content
-        } else {
-            // Initialize content for mobile users
-            document.getElementById('pcMessage').style.display = 'none'; // Hide PC message
-            document.getElementById('content1').style.display = 'flex'; // Show content
-            document.getElementById('content2').style.display = 'none'; // Hide content
-        }
+        <h4>T-Login</h4>
+        <p>T-Login is an automated login system for Termux, simplifying the login process across various platforms. It securely stores user credentials and enables quick access to frequently used applications.</p>
+        <ul>
+            <li><strong>Credential Storage:</strong> Securely saves user credentials in an encrypted format, protecting sensitive information.</li>
+            <li><strong>Multi-Platform Support:</strong> Supports login across multiple platforms and services, ensuring a seamless user experience.</li>
+            <li><strong>One-Click Login:</strong> Provides a one-click login option for frequently used applications, saving time and effort.</li>
+            <li><strong>Session Management:</strong> Keeps track of user sessions, allowing easy logout and re-login options.</li>
+            <li><strong>Data Privacy:</strong> Ensures sensitive data is handled responsibly, with options to clear user data when no longer needed, maintaining privacy and security.</li>
+        </ul>
 
-        function showMessage() {
-            document.getElementById('content1').classList.remove('active');
-            document.getElementById('content2').classList.add('active');
-        }
+        <h3>Conclusion</h3>
+        <p>Each tool within the Dumb Boy Project is tailored to enhance functionality, streamline processes, and provide valuable resources for users within the Termux environment. Whether you’re developing applications, managing files, or conducting OSINT research, these tools can significantly improve your productivity and efficiency.</p>
+    </main>
 
-        function showContent() {
-            document.getElementById('content2').classList.remove('active');
-            document.getElementById('content1').classList.add('active');
-        }
-
-        // Real-time clock display
-        function updateTime() {
-            var now = new Date();
-            var hours = now.getHours();
-            var minutes = now.getMinutes();
-            var seconds = now.getSeconds();
-            document.getElementById("liveClock").innerHTML = (hours < 10 ? '0' : '') + hours + ':' + (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-        }
-
-        // Update clock every second
-        setInterval(updateTime, 1000);
-
-        // Function to trigger background color change
-        function triggerColorChange() {
-            var colors = ['#000000', '#550000', '#000055', '#330033'];
-            var bodyElement = document.body;
-            var currentColor = bodyElement.style.backgroundColor;
-            var newColor = colors[(colors.indexOf(currentColor) + 1) % colors.length];
-            bodyElement.style.backgroundColor = newColor;
-        }
-    </script>
+    <footer>
+        <p>© 2024 DedSec Project. All rights reserved.</p>
+    </footer>
 </body>
 </html>

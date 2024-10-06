@@ -10,154 +10,66 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            overflow-y: auto; /* Allows vertical scrolling */
-            max-width: 100%;
-            box-sizing: border-box;
-            background-color: #000000; /* Darkest black background */
+            background-color: #000000; /* Black background */
             color: #00ff00; /* Green text */
+            text-align: center; /* Center all text */
         }
 
-        header, footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
+        header {
+            background-color: #000000; /* Black header */
             padding: 1em 0;
         }
 
         main {
             padding: 1em;
-            max-width: 800px; /* Maximum width for main content */
-            margin: 0 auto; /* Center the content */
+            max-width: 800px; /* Limit width */
+            margin: 0 auto; /* Center content */
         }
 
         h1 {
-            color: red; /* Red title */
-            margin: 0.5em 0;
-        }
-
-        h2, h3, h4 {
-            margin: 0.5em 0;
-        }
-
-        p, ul {
-            font-size: 1.1em; /* Base font size for text */
-            margin: 0.5em 0;
+            color: red;
         }
 
         .download-button {
-            display: inline-block;
             margin: 20px 0;
             padding: 10px 20px;
             font-size: 1.2em;
-            color: white;
             background-color: #800080; /* Purple button */
             border: none;
+            color: white;
             border-radius: 5px;
-            text-decoration: none;
             cursor: pointer;
+            text-decoration: none;
         }
 
         .download-button:hover {
-            background-color: #6a006a; /* Darker shade on hover */
-        }
-
-        @media (max-width: 600px) {
-            p, ul {
-                font-size: 1em; /* Smaller font size for mobile */
-            }
+            background-color: #6a006a;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>The Return Of DedSec</h1>
-        <img src="path/to/your/image.png" alt="DedSec Logo" style="max-width: 100%; height: auto; margin: 10px 0;"> <!-- Replace with your actual image path -->
-        <a href="https://github.com/dedsec1121fk/dedsec.github.io/blob/main/dumb-boy.zip" class="download-button" download>Download dumb-boy.zip</a>
+        <img src="https://github.com/dedsec1121fk/dedsec.github.io/blob/main/skull-icon.jpg" alt="DedSec Logo" style="max-width: 100%; height: auto;">
+        <a href="https://github.com/dedsec1121fk/dedsec.github.io/raw/main/dumb-boy.zip" class="download-button" download>Download dumb-boy.zip</a>
     </header>
 
     <main>
-        <h2>What is Dumb Boy Project?</h2>
-        <p>Dumb Boy is a suite of tools for enhancing the Termux experience, offering functionalities for developers, cybersecurity enthusiasts, and terminal users.</p>
+        <h2>Dumb Boy Project</h2>
+        <p>A set of tools designed for Termux users, focused on development, cybersecurity, and terminal management.</p>
 
-        <h3>Dumb Boy Features</h3>
+        <h3>Features</h3>
 
-        <h4>Camera Phish</h4>
-        <p>Camera Phish is a web application that allows users to capture images using their device's front or back camera. Built with Flask, this tool creates a seamless interface for users to remotely access their camera feed and save captured images directly to their device.</p>
         <ul>
-            <li><strong>Camera Access:</strong> Utilizes both front and back cameras to take snapshots, offering versatility for various use cases.</li>
-            <li><strong>Image Storage:</strong> Captured images are stored in a dedicated directory (Downloads/Camera-Phish), making retrieval straightforward.</li>
-            <li><strong>IP Logging:</strong> Logs the IP address and user agent of each user, providing valuable data for analysis and tracking.</li>
-            <li><strong>Serveo Integration:</strong> Establishes a secure tunnel for remote access using Serveo, making it easy to share camera access over the internet.</li>
-            <li><strong>Responsive UI:</strong> Features a user-friendly interface for monitoring the camera feed and capturing images in real time.</li>
+            <li><strong>Camera Phish:</strong> Capture images using front/back cameras remotely, store them in Downloads, and log IPs for analysis.</li>
+            <li><strong>DedSec Database:</strong> File management system with upload, download, and delete functions, accessible remotely via Serveo.</li>
+            <li><strong>Donation Phish:</strong> Simulates form submission, stores data locally, and demonstrates phishing for educational purposes.</li>
+            <li><strong>NAIOVUM:</strong> Automates Neovim setup with plugins and themes, designed to streamline coding in Termux.</li>
+            <li><strong>OSINTDS:</strong> Automates OSINT tasks like email validation, Instagram profile lookup, IP geolocation, and phone number verification.</li>
         </ul>
 
-        <h4>DedSec Database</h4>
-        <p>The DedSec Database is a Flask-based web application designed for efficient file management through a browser interface. Users can upload, list, download, and delete files with ease, all facilitated by a simple and effective design.</p>
-        <ul>
-            <li><strong>File Uploading:</strong> Easily upload files to the server, making it a robust tool for document management.</li>
-            <li><strong>File Listing and Management:</strong> View uploaded files with intuitive options to download or delete, streamlining file operations.</li>
-            <li><strong>File Search Functionality:</strong> Search for files by name to quickly find what you need without sifting through long lists.</li>
-            <li><strong>Serveo Tunnel:</strong> Utilizes Serveo to expose the application over the web, allowing remote access via a publicly accessible URL.</li>
-            <li><strong>Responsive Design:</strong> Adapts to various screen sizes, ensuring a consistent experience across devices.</li>
-        </ul>
-
-        <h4>Donation Phishing</h4>
-        <p>Donation Phishing is an educational tool that demonstrates the collection of personal information through a secure web form. It utilizes Flask to handle form submissions, saving the submitted data in text files while ensuring accessibility via a public URL provided by Serveo.</p>
-        <ul>
-            <li><strong>Form Submission:</strong> Users can submit their personal information, providing a practical example of data collection methods.</li>
-            <li><strong>Data Storage:</strong> Information is saved in text files within a dedicated People directory, organized for easy access.</li>
-            <li><strong>Serveo Tunneling:</strong> Makes the application accessible from anywhere via a Serveo tunnel, demonstrating remote data collection.</li>
-            <li><strong>Port Conflict Handling:</strong> Automatically resolves any port conflicts, ensuring smooth operation of the application.</li>
-        </ul>
-
-        <h4>Customization</h4>
-        <p>This tool is designed to enhance the terminal experience in Termux by updating the .bashrc configuration and setting a customized Message of the Day (MOTD). It provides an easy way to personalize your terminal environment.</p>
-        <ul>
-            <li><strong>Custom PS1 Prompt:</strong> Updates the command prompt to display the date, time, username, and current directory, adding a visual flair to the terminal.</li>
-            <li><strong>ASCII Art MOTD:</strong> Introduces engaging ASCII art to the terminal’s MOTD, making each session more enjoyable and visually appealing.</li>
-            <li><strong>Error Logging:</strong> Captures any errors encountered during execution, making troubleshooting straightforward.</li>
-            <li><strong>Termux Compatibility:</strong> Tailored for use in Termux, accommodating its unique file structure and permissions.</li>
-        </ul>
-
-        <h4>NAIOVUM</h4>
-        <p>NAIOVUM simplifies the setup and configuration of Neovim within Termux. It automates the installation of essential packages, plugins, and customized settings, enhancing the coding environment for developers and power users.</p>
-        <ul>
-            <li><strong>Package Installation:</strong> Automatically installs necessary packages like Neovim, Python, and Git, streamlining the initial setup process.</li>
-            <li><strong>Plugin Management:</strong> Installs popular plugin managers such as Vim-Plug and Packer for hassle-free plugin management.</li>
-            <li><strong>Custom Configuration:</strong> Sets up a personalized init.vim with theme options (like Gruvbox and OneDark) and a selection of useful plugins.</li>
-            <li><strong>Python Support:</strong> Installs Python support for Neovim, enabling users to leverage Python for scripting and extensions.</li>
-            <li><strong>Backup and Restore:</strong> Offers functionality to back up and restore Neovim configurations, ensuring users can maintain their settings over time.</li>
-            <li><strong>Auto-Update Feature:</strong> Automatically updates Neovim and its plugins, keeping the environment up to date.</li>
-        </ul>
-
-        <h4>OSINTDS</h4>
-        <p>OSINTDS is a powerful tool for performing OSINT (Open Source Intelligence) tasks. This application automates the gathering of data from public sources such as emails, phone numbers, social media profiles, and web searches.</p>
-        <ul>
-            <li><strong>Email Lookup:</strong> Validates email addresses and checks if they have been compromised using the "Have I Been Pwned" API, enhancing security awareness.</li>
-            <li><strong>Instagram Lookup:</strong> Retrieves detailed information from public Instagram profiles, including follower count, bio, and verification status.</li>
-            <li><strong>IP Lookup:</strong> Geolocates IP addresses, providing details like country, city, ISP, and more, aiding in cybersecurity investigations.</li>
-            <li><strong>Phone Number Lookup:</strong> Validates phone numbers and retrieves associated carrier, region, and timezone information, useful for various verification processes.</li>
-            <li><strong>Web Search:</strong> Performs general web searches using Google to quickly retrieve relevant results for a given query.</li>
-            <li><strong>Username Search:</strong> Checks for username availability across various social media platforms, ensuring users can secure their desired usernames.</li>
-        </ul>
-
-        <h4>T-Login</h4>
-        <p>T-Login is an automated login system for Termux, simplifying the login process across various platforms. It securely stores user credentials and enables quick access to frequently used applications.</p>
-        <ul>
-            <li><strong>Credential Storage:</strong> Securely saves user credentials in an encrypted format, protecting sensitive information.</li>
-            <li><strong>Multi-Platform Support:</strong> Supports login across multiple platforms and services, ensuring a seamless user experience.</li>
-            <li><strong>One-Click Login:</strong> Provides a one-click login option for frequently used applications, saving time and effort.</li>
-            <li><strong>Session Management:</strong> Keeps track of user sessions, allowing easy logout and re-login options.</li>
-            <li><strong>Data Privacy:</strong> Ensures sensitive data is handled responsibly, with options to clear user data when no longer needed, maintaining privacy and security.</li>
-        </ul>
-
-        <h3>Conclusion</h3>
-        <p>Each tool within the Dumb Boy Project is tailored to enhance functionality, streamline processes, and provide valuable resources for users within the Termux environment. Whether you’re developing applications, managing files, or conducting OSINT research, these tools can significantly improve your productivity and efficiency.</p>
+        <h4>Disclaimer</h4>
+        <p>The Dumb Boy project is intended for educational purposes only. Users should comply with local laws and act responsibly. The developer is not responsible for unethical actions.</p>
     </main>
-
-    <footer>
-        <p>© 2024 DedSec Project. All rights reserved.</p>
-    </footer>
 </body>
 </html>

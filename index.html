@@ -14,6 +14,8 @@
             overflow-y: auto; /* Allows vertical scrolling */
             max-width: 100%;
             box-sizing: border-box;
+            background-color: #000000; /* Darkest black background */
+            color: #00ff00; /* Green text */
         }
 
         header, footer {
@@ -29,7 +31,12 @@
             margin: 0 auto; /* Center the content */
         }
 
-        h1, h2, h3, h4 {
+        h1 {
+            color: red; /* Red title */
+            margin: 0.5em 0;
+        }
+
+        h2, h3, h4 {
             margin: 0.5em 0;
         }
 
@@ -44,7 +51,7 @@
             padding: 10px 20px;
             font-size: 1.2em;
             color: white;
-            background-color: #007BFF; /* Bootstrap primary color */
+            background-color: #800080; /* Purple button */
             border: none;
             border-radius: 5px;
             text-decoration: none;
@@ -52,7 +59,7 @@
         }
 
         .download-button:hover {
-            background-color: #0056b3; /* Darker shade on hover */
+            background-color: #6a006a; /* Darker shade on hover */
         }
 
         @media (max-width: 600px) {
@@ -66,7 +73,7 @@
     <header>
         <h1>The Return Of DedSec</h1>
         <img src="path/to/your/image.png" alt="DedSec Logo" style="max-width: 100%; height: auto; margin: 10px 0;"> <!-- Replace with your actual image path -->
-        <a href="https://github.com/dedsec1121fk/dumb-boy/releases/latest/download/dumb-boy.zip" class="download-button" download>Download dumb-boy.zip</a>
+        <a href="https://github.com/dedsec1121fk/dedsec.github.io/blob/main/dumb-boy.zip" class="download-button" download>Download dumb-boy.zip</a>
     </header>
 
     <main>
@@ -132,7 +139,7 @@
             <li><strong>IP Lookup:</strong> Geolocates IP addresses, providing details like country, city, ISP, and more, aiding in cybersecurity investigations.</li>
             <li><strong>Phone Number Lookup:</strong> Validates phone numbers and retrieves associated carrier, region, and timezone information, useful for various verification processes.</li>
             <li><strong>Web Search:</strong> Performs general web searches using Google to quickly retrieve relevant results for a given query.</li>
-            <li><strong>Username Search:</strong> Checks multiple social media platforms to locate public profiles associated with a given username, enhancing social media investigations.</li>
+            <li><strong>Username Search:</strong> Checks for username availability across various social media platforms, ensuring users can secure their desired usernames.</li>
         </ul>
 
         <h4>T-Login</h4>
